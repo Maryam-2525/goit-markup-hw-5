@@ -490,6 +490,30 @@ ul{
      1px 4px 6px rgba(0, 0, 0, 0.16);
 
 }
+.port-img{
+    position: relative;
+    
+   
+}
+.port-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 63px  24px  91px  24px; 
+}
+.port-img:hover {
+    cursor: pointer;
+    background-color:rgba(33, 150, 243, 0.9) ;
+   
+}
+
+
+.port-overlay-item{
+    font-family:"roboto";
+    font-size:18px;
+    line-height: calc(28/18);
+    letter-spacing: 0.03rem;
+}
 .port-disp-flex{
     display: flex;
     flex-wrap: wrap;
