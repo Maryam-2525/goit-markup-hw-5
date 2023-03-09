@@ -684,23 +684,25 @@ ul{
 }
 
 .modal{
+    position: absolute;
     width: 521px;
     height:581px ;
     background-color: white;
-    top: 0;
-    left: 0;
-
-}
-
-.modal-bg{
-    position: absolute;
-    background-color:rbga(0, 0, 0, 0.2) ;
-    width: 100vw;
-    height: 100vh;
     top: 50%;
     left: 50%;
     transform: translate(-50% -50%);
 
+
+}
+
+.modal-bg{
+    position: fixed;
+    background-color:rbga(0, 0, 0, 0.2) ;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    
+   
 }
 
 .modal-bttn-close{
