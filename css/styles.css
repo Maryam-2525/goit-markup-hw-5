@@ -253,6 +253,7 @@ ul{
     justify-content: center;
     padding: 27px 132px;
     
+    
 }
 
 .what-we-do-item:not(:last-child){
@@ -530,6 +531,9 @@ ul{
 .port-item{
     position: relative;
     overflow: hidden;
+    transition-property: background-color;
+    transition-duration:250ms ;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .port-item:hover,
@@ -546,23 +550,19 @@ ul{
     height: 290PX;
     top: 0;
     left: 0;
-    transform: translateY(100%);
-    
-   
+    background-color: rgba(33, 150, 243, 0.9);  
+    transform: translateY(-100%);  
 }
-.port-{
+.port-item:hover .port-overlay{
     cursor: pointer;
-    background-color: #2196f3;
     transform: translateY(100%);
-    
-
-
+   
 }
 
 
 .port-overlay-item{
     font-family:"roboto";
-    color: black;
+    color: white;
     font-size:18px;
     line-height: calc(28/18);
     letter-spacing: 0.03rem;
@@ -574,8 +574,7 @@ ul{
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: var(--white-color);
-    
-    
+       
 }
 
 .port-item:nth-child(-n + 3){
@@ -685,21 +684,22 @@ ul{
 }
 
 .modal{
-    width:528px ;
+    width: 521px;
     height:581px ;
     background-color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
-    animation: modal-animation;
+    top: 0;
+    left: 0;
+
 }
 
 .modal-bg{
-    position:fixed;
+    position: absolute;
     background-color:rbga(0, 0, 0, 0.2) ;
     width: 100vw;
     height: 100vh;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
 
 }
 
