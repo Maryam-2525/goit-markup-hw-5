@@ -111,6 +111,9 @@ ul{
     padding-top: 32px;
     padding-bottom: 32px;
     display: block;
+    transition-property:color;
+    transition-duration:250ms ;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .nav-lnk:focus,
 .nav-lnk:hover{
@@ -119,6 +122,15 @@ ul{
 
 .active{
     color: var(--other-color);
+}
+.active::after{
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color:var(--other-color) ;
+    border-radius: 2px;
+    margin-top: 60px;
 }
 .contact-list{
     display: flex;
@@ -136,6 +148,10 @@ ul{
     padding-top: 32px;
     padding-bottom: 32px;
     display: block;
+    position: relative;
+    transition-property:color ;
+    transition-duration:250ms ;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .header-cont{
@@ -215,10 +231,26 @@ ul{
     color: var(--main-text-color);
     margin-bottom: 50px;
 }
+ .what-we-do-items{
+    display: flex;
+ }
 
 .what-we-do-item{
     display: flex; 
- 
+    position: relative; 
+}
+
+.what-we-do-overlay{
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 27px 132px;
+    
 }
 
 .what-we-do-item:not(:last-child){
@@ -492,14 +524,16 @@ ul{
 }
 .port-img{
     position: relative;
-    
-   
+
+
+    overflow: hidden;
 }
 .port-overlay{
     position: absolute;
-    top:5;
-    width: 100%;
-    height: 100%;
+    width: 270PX;
+    height: 290PX;
+    transform: translateY(100%);
+    background-color: rgba(33, 150, 243, 0.9);
     margin: 63px  24px  91px  24px; 
 }
 .port-img:hover {
@@ -520,6 +554,7 @@ ul{
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: var(--white-color);
+    
 }
 
 .port-item:nth-child(-n + 3){
@@ -618,3 +653,35 @@ ul{
     margin-left: 70px;
 }
 
+/* MODAL SECTION */
+
+.is-hidden{
+    visibility: hidden;
+}
+
+.modal{
+    position: fixed;
+    width:528px ;
+    height:581px ;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+}
+
+.modal-bg{
+    position: fixed;
+    background-color:rbga(0, 0, 0, 0.2) ;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+
+}
+
+.modal-bttn-close{
+    width: 30px;
+    height:30px ;
+    border: 50%;
+    transform: translateX(520);
+}

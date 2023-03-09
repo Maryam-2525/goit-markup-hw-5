@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Homework  4</title>
+    <title>Homework  5</title>
 </head>
 <body>
     <!-- Header section -->
@@ -17,7 +17,7 @@
             <a class="logo" href="./index.html" class="logo">WebStudio</a>
             <ul class="nav-list ">
               <li class="nav-item">
-                <a class="nav-lnk active " href="./index.html">Studio</a></li>
+                <a class="nav-lnk active " href="./index.html" data-modal-open>Studio</a></li>
               <li class="nav-item">
                 <a class="nav-lnk  " href="portfolio.html">portfolio</a></li>
               <li class="nav-item">
@@ -29,14 +29,14 @@
           <ul class="contact-list  ">
            
             <li class="header-contact">
-              <a class="header-contact-lnk" href="mailto:info@devstudio.com">
+              <a class="header-contact-lnk" href="mailto:info@devstudio.com" data-modal-open >
                 <svg  class="header-svg-fill" width="16" height="12">
                   <use href="./images/sprites.svg#icon-envelope"></use>
                 </svg> 
                 info@devstudio</a>
             </li>          
             <li class="header-contact">
-              <a class="header-contact-lnk" href="tel:+380961111111">
+              <a class="header-contact-lnk" href="tel:+380961111111" >
                   <svg class="header-svg-fill" width="10" height="16" >
                     <use href="./images/sprites.svg#icon-smartphone-1"></use>
                  </svg>      
@@ -104,13 +104,19 @@
       <section class="what-we-do section">
         <div class="container">
               <h2 class="what-we-do-tittle ">What we do</h2>
-              <ul class="list what-we-do-item ">
+              <ul class="list what-we-do-items ">
                 <li class="what-we-do-item">
-                  <img class="what-we-do-item" src="images/photo3.jpg" alt="Desktop" width="370" height="294"></li>
+                  <img class="what-we-do-item" src="images/photo3.jpg" alt="Desktop" width="370" height="294">
+                  <p class="what-we-do-overlay">Desktop Apps</p>
+                </li>
                 <li class="what-we-do-item">
-                  <img class="what-we-do-item" src="images/photo2.jpg" alt="Phone" width="370" height="294"></li>
+                  <img class="what-we-do-item" src="images/photo2.jpg" alt="Phone" width="370" height="294">
+                  <p class="what-we-do-overlay">Mobile Apps</p>
+                </li>
                 <li class="what-we-do-item">
-                  <img class="what-we-do-item" src="images/photo1.jpg" alt="Tablet" width="370" height="294"></li>
+                  <img class="what-we-do-item" src="images/photo1.jpg" alt="Tablet" width="370" height="294">
+                  <p class="what-we-do-overlay">Design Solutions</p>
+                </li>
               </ul>
       </section>
       <!--team  section -->
@@ -364,10 +370,9 @@
      </div>
      </div>
     </footer>
-    <div class="modal-bg" ishidden>
-      <div class="modal" modal>
-        <button type="button" data-modal-close>x</button>
-
+    <div class="modal-bg is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-bttn-close" type="button" data-modal-close>X</button>
       </div>
     </div>
 
