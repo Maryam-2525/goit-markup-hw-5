@@ -112,6 +112,7 @@ ul{
     padding-top: 32px;
     padding-bottom: 32px;
     display: block;
+    position: relative;
     transition-property:color;
     transition-duration:250ms ;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
@@ -132,6 +133,7 @@ ul{
     background-color:var(--other-color) ;
     border-radius: 2px;
 
+    transform: translateY(800%);
 
 }
 .contact-list{
@@ -245,15 +247,18 @@ ul{
 .what-we-do-overlay{
     background-color: rgba(0, 0, 0, .5);
     color: white;
+    font-family: "roboto";
+    font-size: 14px;
+    font-weight: 700;
+    line-height:calc(14/16.41);
+    letter-spacing: 0.03em;
     position: absolute;
     width: 100%;
-    top: 75%;
+    bottom:0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
     padding: 27px 132px;
-    
-    
 }
 
 .what-we-do-item:not(:last-child){
@@ -387,7 +392,7 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-property:color;
+    transition-property:color, background-color;
     transition-duration:250ms ;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
@@ -437,7 +442,7 @@ ul{
     border: 1px solid #AFB1BB;
     color: #AFB1B8;
     position: relative;
-    transition-property:color;
+    transition-property:color, border-color;
     transition-duration:250ms ;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
@@ -462,6 +467,8 @@ ul{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+
+    
 }
 .portfolio-btn-item{
     font-family: 'Roboto';
@@ -480,7 +487,7 @@ ul{
     padding-right: 27px;
     padding-top: 6px;
     padding-bottom: 6px;
-    transition-property:color, shadow;
+    transition-property:color, shadow, background-color;
     transition-duration:250ms ;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
@@ -528,13 +535,8 @@ ul{
     border-left:1px solid #eee ;
     border-right:1px solid #eee;
 }
-.port-item{
-    position: relative;
-    overflow: hidden;
-    transition-property: background-color;
-    transition-duration:250ms ;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) ;
-}
+
+
 
 .port-item:hover,
 .port-item:focus{
@@ -544,21 +546,16 @@ ul{
    
 }
 
-.port-overlay{
-    position: absolute;
-    width: 370PX;
-    height: 290PX;
-    top: 0;
-    left: 0;
-    background-color: rgba(33, 150, 243, 0.9);  
-    transform: translateY(-100%);  
-}
-.port-item:hover .port-overlay{
+.port-item:hover .port-overlay-item,
+.port-item:focus .port-overlay-item{
     cursor: pointer;
-    transform: translateY(100%);
-   
+    transform: translateY(0);
 }
 
+.port-overlay{
+    position: relative;
+    overflow: hidden;
+}
 
 .port-overlay-item{
     font-family:"roboto";
@@ -566,8 +563,23 @@ ul{
     font-size:18px;
     line-height: calc(28/18);
     letter-spacing: 0.03rem;
-    margin: 63px  24px  91px  24px; 
+    width: 370PX;
+    height: 290PX;
+    padding:63px  24px  91px  24px; ;
+    background-color: rgba(33, 150, 243, 0.9);
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateY(100%);
+    transition:transform 250ms  cubic-bezier(0.4, 0, 0.2, 1) ;
+    
 }
+
 
 .port-disp-flex{
     display: flex;
@@ -690,45 +702,45 @@ ul{
     background-color: white;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
-
-
+    transform: translate(-50%, -50%);
+    animation: modal-animation 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-bg{
     position: fixed;
-    background-color:rbga(0, 0, 0, 0.2) ;
+    background-color:rgba(0, 0, 0, 0.2);
     width: 100vw;
     height: 100vh;
     top:0;
-    
-   
+    left:0;  
 }
 
 .modal-bttn-close{
     width: 30px;
     height:30px ;
     border-radius: 50%;
+    border-color:rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    margin-left: 5px;
+
+
+    position: inherit;
+    transform: translatex(1600%);
 }
 
 @keyframes modal-animation {
     0%{
         scale: 0;
         opacity: 0;
-
     }
 
     50%{
         scale: .5;
         opacity: .5;
-
     }
 
     100%{
         scale: 1;
         opacity: 1;
-
-
-    }
-    
+    }   
 }   
